@@ -40,6 +40,7 @@ public class GenericConfig {
 	public void setUp() {
 		System.out.println("hello");
 		if (SystemConstants.BrowserName.equalsIgnoreCase("chrome")) {
+			System.out.println("In setup chrome");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			extTest.log(LogStatus.PASS, "Chrome driver is successfully opened");

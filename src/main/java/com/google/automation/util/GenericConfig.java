@@ -15,6 +15,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class GenericConfig {
 
 	public static WebDriver driver;
@@ -38,7 +40,7 @@ public class GenericConfig {
 	public void setUp() {
 		System.out.println("hello");
 		if (SystemConstants.BrowserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", SystemConstants.ChromePath);
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			extTest.log(LogStatus.PASS, "Chrome driver is successfully opened");
 		}/*else if(SystemConstants.BrowserName.equalsIgnoreCase("HtmlUnitDriver")){

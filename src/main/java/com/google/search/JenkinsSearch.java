@@ -20,6 +20,8 @@ public class JenkinsSearch {
 		
 		driver.findElement(By.xpath("//a[@href = 'https://jenkins.io/']")).click();
 		System.out.println("search jenkins");
+		String text = driver.findElement(By.xpath("//div[@id='CollapsingNavbar']/ul[2]/li[3]/a")).getText();
+		System.out.println("text present is "+ text);
 		extTest.log(LogStatus.PASS, "jenkins io screen is launched");
 	}
 }
